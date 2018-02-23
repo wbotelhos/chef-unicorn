@@ -1,0 +1,15 @@
+[Unit]
+Description=Unicorn
+
+[Service]
+Environment=BUNDLE_GEMFILE=<%= @bundle_gemfile %> LANG=<%= @locale %> LC_ALL=<%= @locale %> LANGUAGE=<%= @locale %> <%= "GEM_HOME=#{@gem_home}" if @gem_home %>
+ExecReload=/bin/kill -SIGUSR2 $MAINPID
+ExecStart=<%= @bundle %> exec unicorn -E <%= @environment %> -c <%= @config %>
+PIDFile=<%= @pidfile %>
+Restart=on-failure
+Type=simple
+User=<%= @user %>
+WorkingDirectory=<%= @chdir %>
+
+[Install]
+WantedBy=multi-user.target
