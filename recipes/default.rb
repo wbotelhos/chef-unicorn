@@ -1,4 +1,4 @@
 # frozen_string_literal: true
 
-include_recipe 'unicorn-custom::config'
-include_recipe 'unicorn-custom::service'
+include_recipe 'chef-unicorn::config'
+include_recipe 'chef-unicorn::service'

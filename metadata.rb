@@ -6,8 +6,8 @@ maintainer_email 'wbotelhos@gmail.com'
 name             'chef-unicorn'
 version          '0.1.1'
 
-recipe 'unicorn-custom::config',  'Installs configuration.'
-recipe 'unicorn-custom::service', 'Installs service file.'
+recipe 'chef-unicorn::config',  'Installs configuration.'
+recipe 'chef-unicorn::service', 'Installs service file.'
 
 issues_url 'https://github.com/wbotelhos/chef-unicorn/issues'
 source_url 'https://github.com/wbotelhos/chef-unicorn'
