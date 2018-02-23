@@ -1,3 +1,9 @@
+## v0.1.2
+
+### Fixes
+
+- Fix cookbook name.
+
 ## v0.1.1
 
 ### Updates
