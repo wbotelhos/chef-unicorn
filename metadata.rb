@@ -4,7 +4,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 maintainer       'Washington Botelho'
 maintainer_email 'wbotelhos@gmail.com'
 name             'chef-unicorn'
-version          '0.1.0'
+version          '0.1.1'
 
 recipe 'unicorn-custom::config',  'Installs configuration.'
 recipe 'unicorn-custom::service', 'Installs service file.'
