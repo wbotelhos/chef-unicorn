@@ -1,3 +1,9 @@
+## v0.1.4
+
+### Updates
+
+- Updates README with instructions.
+
 ## v0.1.3
 
 ### Updates
