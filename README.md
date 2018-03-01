@@ -7,7 +7,7 @@ Installs and configure Unicorn server.
 
 ## Requirements
 
-### Platforms
+#### Platforms
 
 - Ubuntu 15.04+ (since we use Systemd)
 
@@ -39,34 +39,50 @@ Installs and configure Unicorn server.
 - `node['chef-unicorn']['service']['name']`
 - `node['chef-unicorn']['service']['user']`
 
-## Node Configuration
+## Usage
+
+#### Berkfile
+
+```ruby
+source 'https://supermarket.chef.io'
+
+cookbook 'chef-unicorn'
+```
+
+#### Node
 
 The following nodes is an example of the minimal needed to run correctly this cookbook:
 
 ```yml
-"chef-unicorn": {
-  "config": {
-    "config_file":       "/var/www/app/shared/config/unicorn.rb",
-    "listen":            "/var/www/app/shared/run/unicorn/unicorn.sock",
-    "pid":               "/var/www/app/shared/run/unicorn/unicorn.pid",
-    "stderr_path":       "/var/www/app/shared/log/unicorn/error.log",
-    "stdout_path":       "/var/www/app/shared/log/unicorn/out.log",
-    "working_directory": "/var/www/app/current"
+{
+  "chef-unicorn": {
+    "config": {
+      "config_file":       "/var/www/app/shared/config/unicorn.rb",
+      "listen":            "/var/www/app/shared/run/unicorn/unicorn.sock",
+      "pid":               "/var/www/app/shared/run/unicorn/unicorn.pid",
+      "stderr_path":       "/var/www/app/shared/log/unicorn/error.log",
+      "stdout_path":       "/var/www/app/shared/log/unicorn/out.log",
+      "working_directory": "/var/www/app/current"
+    },
+
+    "service": {
+      "bundle_gemfile": "/var/www/app/current/Gemfile",
+      "config":         "/var/www/app/shared/config/unicorn.rb",
+      "pidfile":        "/var/www/app/shared/run/unicorn/unicorn.pid"
+    }
   },
 
-  "service": {
-    "bundle_gemfile": "/var/www/app/current/Gemfile",
-    "config":         "/var/www/app/shared/config/unicorn.rb",
-    "pidfile":        "/var/www/app/shared/run/unicorn/unicorn.pid"
-  }
+  "run_list": [
+    "recipe[chef-unicorn]"
+  ]
 }
 ```
 
-### Unicorn documentation
+## Unicorn documentation
 
 https://bogomips.org/unicorn
 
-### References
+## References
 
 https://github.com/defunkt/unicorn/blob/master/examples/unicorn.conf.rb
 
