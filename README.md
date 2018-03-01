@@ -41,7 +41,7 @@ Installs and configure Unicorn server.
 
 ## Node Configuration
 
-The following nodes is an exemplo of the minimal needed to run correctly this cookbook:
+The following nodes is an example of the minimal needed to run correctly this cookbook:
 
 ```yml
 "chef-unicorn": {
