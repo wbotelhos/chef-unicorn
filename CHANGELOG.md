@@ -1,3 +1,8 @@
+## v0.1.5
+
+- Remove unused `service_name` variable from template;
+- Renames `chdir` to the original name `working_directory`.
+
 ## v0.1.4
 
 ### Updates
