@@ -13,16 +13,15 @@ template "/etc/systemd/system/#{service_name}.service" do
   source 'etc/systemd/system/service.erb'
 
   variables(
-    bundle_gemfile: node['chef-unicorn']['service']['bundle_gemfile'],
-    bundle:         node['chef-unicorn']['service']['bundle'],
-    chdir:          node['chef-unicorn']['service']['chdir'],
-    config:         node['chef-unicorn']['service']['config'],
-    environment:    node['chef-unicorn']['service']['environment'],
-    gem_home:       node['chef-unicorn']['service']['gem_home'],
-    locale:         node['chef-unicorn']['service']['locale'],
-    pidfile:        node['chef-unicorn']['service']['pidfile'],
-    service_name:   service_name,
-    user:           node['chef-unicorn']['service']['user']
+    bundle_gemfile:    node['chef-unicorn']['service']['bundle_gemfile'],
+    bundle:            node['chef-unicorn']['service']['bundle'],
+    config:            node['chef-unicorn']['service']['config'],
+    environment:       node['chef-unicorn']['service']['environment'],
+    gem_home:          node['chef-unicorn']['service']['gem_home'],
+    locale:            node['chef-unicorn']['service']['locale'],
+    pidfile:           node['chef-unicorn']['service']['pidfile'],
+    user:              node['chef-unicorn']['service']['user'],
+    working_directory: node['chef-unicorn']['service']['working_directory']
   )
 
   notifies :run, "execute[daemon-reload for #{service_name}]", :immediately

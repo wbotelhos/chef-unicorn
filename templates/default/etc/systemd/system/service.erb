@@ -9,7 +9,7 @@ PIDFile=<%= @pidfile %>
 Restart=on-failure
 Type=simple
 User=<%= @user %>
-WorkingDirectory=<%= @chdir %>
+WorkingDirectory=<%= @working_directory %>
 
 [Install]
 WantedBy=multi-user.target
