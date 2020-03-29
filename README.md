@@ -13,31 +13,35 @@ Installs and configure Unicorn server.
 
 ## Config
 
-- `node['chef-unicorn']['config']['backlog']`
-- `node['chef-unicorn']['config']['check_client_connection']`
-- `node['chef-unicorn']['config']['listen']`
-- `node['chef-unicorn']['config']['pid']`
-- `node['chef-unicorn']['config']['preload_app']`
-- `node['chef-unicorn']['config']['stderr_path']`
-- `node['chef-unicorn']['config']['stdout_path']`
-- `node['chef-unicorn']['config']['timeout']`
-- `node['chef-unicorn']['config']['worker_processes']`
-- `node['chef-unicorn']['config']['working_directory']`
-- `node['chef-unicorn']['config']['before_fork']`
-- `node['chef-unicorn']['config']['after_fork']`
+|Attribute                                                   |Default|
+|------------------------------------------------------------|-------|
+|default['chef-unicorn']['config']['backlog']                |64     |
+|default['chef-unicorn']['config']['check_client_connection']|false  |
+|default['chef-unicorn']['config']['listen']                 |nil    |
+|default['chef-unicorn']['config']['pid']                    |nil    |
+|default['chef-unicorn']['config']['preload_app']            |true   |
+|default['chef-unicorn']['config']['stderr_path']            |nil    |
+|default['chef-unicorn']['config']['stdout_path']            |nil    |
+|default['chef-unicorn']['config']['timeout']                |60     |
+|default['chef-unicorn']['config']['worker_processes']       |4      |
+|default['chef-unicorn']['config']['working_directory']      |nil    |
 
 ## Service
 
-- `node['chef-unicorn']['service']['bundle']`
-- `node['chef-unicorn']['service']['bundle_gemfile']`
-- `node['chef-unicorn']['service']['chdir']`
-- `node['chef-unicorn']['service']['config']`
-- `node['chef-unicorn']['service']['environment']`
-- `node['chef-unicorn']['service']['gem_home']`
-- `node['chef-unicorn']['service']['locale']`
-- `node['chef-unicorn']['service']['pidfile']`
-- `node['chef-unicorn']['service']['name']`
-- `node['chef-unicorn']['service']['user']`
+|-------------------------------------------------------|---------------------|
+|Attribute                                              |Default              |
+|default['chef-unicorn']['config']['after_fork']        |...                  |
+|default['chef-unicorn']['config']['before_fork']       |...                  |
+|default['chef-unicorn']['service']['bundle_gemfile']   |nil                  |
+|default['chef-unicorn']['service']['bundle']           |'/usr/bin/bundle'    |
+|default['chef-unicorn']['service']['config']           |nil                  |
+|default['chef-unicorn']['service']['environment']      |'production'         |
+|default['chef-unicorn']['service']['gem_home']         |'/usr/local/ruby/gem'|
+|default['chef-unicorn']['service']['locale']           |'en_US.UTF-8'        |
+|default['chef-unicorn']['service']['name']             |'unicorn'            |
+|default['chef-unicorn']['service']['pidfile']          |nil                  |
+|default['chef-unicorn']['service']['user']             |'deploy'             |
+|default['chef-unicorn']['service']['working_directory']|'/'                  |
 
 ## Usage
 
