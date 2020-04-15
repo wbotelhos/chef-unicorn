@@ -11,7 +11,7 @@ working_directory <%= @working_directory.inspect %>
 <% end -%>
 
 <% if @listen %>
-listen <%= @listen.inspect %> <%= @backlog ? ", backlog: #{@backlog}" : '' %>
+listen <%= @listen.inspect %> <%= @backlog ? ", :backlog => #{@backlog}" : '' %>
 <% end -%>
 
 <% if @timeout %>
