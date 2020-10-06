@@ -17,6 +17,7 @@ template "/etc/systemd/system/#{service_name}.service" do
     bundle:            node['chef-unicorn']['service']['bundle'],
     config:            node['chef-unicorn']['service']['config'],
     environment:       node['chef-unicorn']['service']['environment'],
+    environment_file:  node['chef-unicorn']['service']['environment_file'],
     gem_home:          node['chef-unicorn']['service']['gem_home'],
     locale:            node['chef-unicorn']['service']['locale'],
     pidfile:           node['chef-unicorn']['service']['pidfile'],
